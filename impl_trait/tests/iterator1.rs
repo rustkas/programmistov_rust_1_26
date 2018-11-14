@@ -5,8 +5,6 @@ cargo test --test
 cargo test --test iterator1 test2 -- --nocapture
 */
 
-
-
 fn print_type_of<T>(_: &T) {
     println!("{}", unsafe { std::intrinsics::type_name::<T>() });
 }
@@ -55,7 +53,6 @@ fn test() {
     //!    Здесь итератор фильтра может быть возвращен, а может и нет. Есть два разных типа,
     //!    которые могут быть возвращены, и поэтому мы должны использовать объект. - типаж
     fn foo(x: i32) -> Box<Iterator<Item = u8>> {
-
         let iter: std::iter::Map<std::vec::IntoIter<u8>, fn(u8) -> u8> =
             vec![1, 2, 3].into_iter().map(|x| x + 1);
         if x % 2 == 0 {
