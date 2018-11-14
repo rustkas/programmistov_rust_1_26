@@ -8,11 +8,9 @@ cargo test --test example1
 // Using Traits study
 #[test]
 // using impl Trait
-fn test1(){
-    trait Trait{}
-    impl Trait for (){
-
-    }
+fn test1() {
+    trait Trait {}
+    impl Trait for () {}
     fn foo() -> impl Trait {
         // ...
     }
@@ -21,15 +19,12 @@ fn test1(){
 
 #[test]
 // Tray to use trait-object
-fn test2(){
+fn test2() {
+    trait Trait {}
 
-    trait Trait{}
-
-// even do not compiled
-//    fn foo() -> Box<Trait> {
-//        // ...
-//    }
-//    let foo = foo();
-
-
+    // even do not compiled
+    //    fn foo() -> Box<Trait> {
+    //        // ...
+    //    }
+    //    let foo = foo();
 }
